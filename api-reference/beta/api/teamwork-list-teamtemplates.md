@@ -1,18 +1,18 @@
 ---
-title: "List teamTemplate"
-description: "Get a list of the teamTemplate objects and their properties."
+title: "List teamTemplates"
+description: "Get all team templates available in a tenant."
 author: "Charlieforce"
 ms.localizationpriority: medium
 ms.prod: "teamwork"
 doc_type: apiPageType
 ---
 
-# List teamTemplate
+# List teamTemplates
 Namespace: microsoft.graph
 
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
-Gets all of the [teamTemplate](../resources/teamtemplate.md) objects available for the tenant. 
+Get all [team templates](../resources/teamtemplate.md) available in a tenant. 
 
 ## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
@@ -20,7 +20,7 @@ One of the following permissions is required to call this API. To learn more, in
 |Permission type|Permissions (from least to most privileged)|
 |:---|:---|
 |Delegated (work or school account)|Team.Create|
-|Delegated (personal Microsoft account)|Not supported|
+|Delegated (personal Microsoft account)|Not supported.|
 |Application|Team.Create|
 
 ## HTTP request
@@ -34,7 +34,7 @@ GET /teamwork/teamTemplates
 ```
 
 ## Optional query parameters
-This method supports the `$expand`, `$filter`, and `$skipToken` [OData query parameter](/graph/query-parameters) to customize the response.
+This method supports the `$expand`, `$filter`, and `$skipToken` [OData query parameters](/graph/query-parameters) to customize the response.
 
 ## Request headers
 |Name|Description|
@@ -46,19 +46,18 @@ Do not supply a request body for this method.
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and a collection of [teamTemplate](../resources/teamtemplate.md) objects. 
+If successful, this method returns a `200 OK` response code and a collection of [teamTemplate](../resources/teamtemplate.md) objects in the response body.
 
 >[!Note]
 >Currently, this API only returns the **id** property of a [teamTemplate](../resources/teamtemplate.md). To get the [teamTemplateDefinition](../resources/teamtemplatedefinition.md), use the OData query parameter `$expand=definitions`.
 
 ## Examples
 
-## Example 1: Get a list of team templates
+### Example 1: Get a list of team templates
 
-### Request
+#### Request
 The following is an example of a request.
 
-# [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
   "name": "list_teamtemplatedefinition"
@@ -67,37 +66,15 @@ The following is an example of a request.
 ``` msgraph-interactive 
 GET https://graph.microsoft.com/beta/teamwork/teamTemplates
 ```
-# [C#](#tab/csharp)
-[!INCLUDE [sample-code](../includes/snippets/csharp/get-teams-csharp-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
-# [JavaScript](#tab/javascript)
-[!INCLUDE [sample-code](../includes/snippets/javascript/get-teams-javascript-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
-# [Objective-C](#tab/objc)
-[!INCLUDE [sample-code](../includes/snippets/objc/get-teams-objc-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
-# [Java](#tab/java)
-[!INCLUDE [sample-code](../includes/snippets/java/get-teams-java-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
-# [Go](#tab/go)
-[!INCLUDE [sample-code](../includes/snippets/go/get-teams-go-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
----
-
-
-
-### Response
+#### Response
 The following is an example of the response
 >**Note:** The response object shown here might be shortened for readability.
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "Collection(microsoft.graph.teamTemplateDefinition)"
+  "@odata.type": "microsoft.graph.teamTemplateDefinition",
+  "isCollection": true
 }
 -->
 ``` http
@@ -113,51 +90,29 @@ The following is an example of the response
 }
 ```
 
-### Example 2: Use $extend and $filter to get templateDefinitions for en-US locale
+### Example 2: Use $extend and $filter to get template definitions for en-US locale
 
-### Request
+#### Request
 
 The following is an example of a request.
 
-# [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
   "name": "list_teamtemplatedefinition"
 }
 -->
 ``` msgraph-interactive 
-GET https://graph.microsoft.com/beta/teamwork/teamTemplates?$expand=definitions&filter=definitions/any(a:a/languageTag eq 'en-US')
+GET https://graph.microsoft.com/beta/teamwork/teamTemplates?$expand=definitions&$filter=definitions/any(a:a/languageTag eq 'en-US')
 ```
-# [C#](#tab/csharp)
-[!INCLUDE [sample-code](../includes/snippets/csharp/get-teams-csharp-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
-# [JavaScript](#tab/javascript)
-[!INCLUDE [sample-code](../includes/snippets/javascript/get-teams-javascript-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
-# [Objective-C](#tab/objc)
-[!INCLUDE [sample-code](../includes/snippets/objc/get-teams-objc-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
-# [Java](#tab/java)
-[!INCLUDE [sample-code](../includes/snippets/java/get-teams-java-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
-# [Go](#tab/go)
-[!INCLUDE [sample-code](../includes/snippets/go/get-teams-go-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
----
-
-
-### Response
+#### Response
 The following is an example of the response
 >**Note:** The response object shown here might be shortened for readability.
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "Collection(microsoft.graph.teamTemplateDefinition)"
+  "@odata.type": "microsoft.graph.teamTemplateDefinition",
+  "isCollection": true
 }
 -->
 
