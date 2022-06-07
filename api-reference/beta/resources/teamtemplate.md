@@ -1,6 +1,6 @@
 ---
 title: "teamTemplate resource type"
-description: "Team Template resource type"
+description: "Represents details about a team template."
 author: "Charlieforce"
 ms.localizationpriority: medium
 ms.prod: "Teamwork"
@@ -13,8 +13,7 @@ Namespace: microsoft.graph
 
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
-A TeamTemplate is a logical container for all the definitions and versions of the same team template.
-
+Represents details about a team template. A **teamTemplate** is a logical container for all the definitions and versions of the same team template.
 
 Inherits from [entity](../resources/entity.md).
 
@@ -26,7 +25,7 @@ Inherits from [entity](../resources/entity.md).
 ## Properties
 |Property|Type|Description|
 |:---|:---|:---|
-|id|String|The `templateId` for the team template. Inherited from [entity](../resources/entity.md).|
+|id|String|The unique identifier for the team template. Inherited from [entity](../resources/entity.md).|
 
 ## Relationships
 |Relationship|Type|Description|
