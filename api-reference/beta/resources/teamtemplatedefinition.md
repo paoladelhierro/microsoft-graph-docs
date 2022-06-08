@@ -1,5 +1,5 @@
 ---
-title: "teamTemplateDefinition"
+title: "teamTemplateDefinition resource type"
 description: "Team Templates definition"
 author: "Charlieforce"
 ms.localizationpriority: medium
@@ -25,15 +25,15 @@ Inherits from [entity](../resources/entity.md).
 ## Properties
 |Property|Type|Description|
 |:---|:---|:---|
-|audience|teamTemplateAudience|Describes the audience the team template is available to.The possible values are: `organization`, `user`, `public`, `unknownFutureValue`.|
+|audience|teamTemplateAudience|Describes the audience that the team template is available to. The possible values are: `organization`, `user`, `public`, `unknownFutureValue`.|
 |categories|String collection|The assigned categories for the team template.|
 |description|String|A brief description of the team template as it will appear to the users in Microsoft Teams.|
 |displayName|String|The user defined name of the team template.|
-|iconUrl|String|The icon url for the team template.|
-|id|String|Encoded64 of `templateId` + `tenant` + `locale` for the team template. Inherited from [entity](../resources/entity.md).|
-|languageTag|String|Language the template is available in.|
+|iconUrl|String|The icon URL for the team template.|
+|id|String|A Base64-encoded value that consists of the ID of the template, the tenant, and the locale for the team template. Inherited from [entity](../resources/entity.md).|
+|languageTag|String|The language that the template is available in.|
 |lastModifiedBy|[identitySet](../resources/intune-identityset.md)|The identity of the user who last modified the team template.|
-|lastModifiedDateTime|DateTimeOffset|The date time of when the team template was last modified.|
+|lastModifiedDateTime|DateTimeOffset|The date and time when the team template was last modified.|
 |parentTemplateId|String|The `templateId` for the team template|
 |publisherName|String|The organization which published the team template.|
 |shortDescription|String|A short-description of the team template as it will appear to the users in Microsoft Teams.|
